@@ -24,7 +24,7 @@ Retro cloud, is a client-server based application, that allows the user to quick
   <img width="254" height="121" alt="image" src="https://github.com/user-attachments/assets/23740c10-a34c-4822-8979-84adf790e856" />
 
   1. Acquire ROMS(currently the emulator is compatible with original gameboy roms up to MBC1, MBC1+ROM and MBC3/MBC3+ROM coming soon)
-  2. Place roms in ServerDATA/roms
+  2. Make a roms folder in ServerDATA/ and place the ROM files in there
   3. You can add optional game descriptive text and cover art in the serverDATA/info_pages/ Art and Text folders
   4. Set the Server IP and PORT 
   
