@@ -11,7 +11,7 @@ Retro cloud, is a client-server based application, that allows the user to quick
   2. Setup OpenSSL on your device: https://tecadmin.net/install-openssl-on-windows/
   3. Setup some form of Certificate that is compatible with OpenSSL and route the paths in both client and server to the certificate files(example. if the certificates are in the project directory, make an Encryption folder).
      Later in the README you will find a guide on setting them up the way I did, but it should work with other certificates too.
-  4. Make sure the LOCAL_CERT variable is set to true for both client and server, otherwise there will be no encryption layer
+  4. Make sure the LOCAL_CERT variable is set to true for both client and server, otherwise the client and server will not use ssl when running and there will be no encryption layer.
 
   # WAN/Portfowarding: 
   In this case, it is assumed that the server and or tunnel service that is being used to put the server on the open internet, already provides the encryption/security layer
