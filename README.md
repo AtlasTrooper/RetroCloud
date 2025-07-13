@@ -34,12 +34,6 @@ Retro cloud, is a client-server based application, that allows the user to quick
   3. Validate that the emulator executable is exposed to the emulator_path variable
   4. Run the asyncClient.py file and enter the server IP
 
-#
-I really enjoyed making this project, mainly cause I really wanted an excuse to learn about and code an emulator,
-and this concept of "game streaming" was my way of finding a project idea involving emulation, that would fit into the school's rubric. 
-
-Enjoy!
-
 # Credits: 
 While writing the backend and making the graphics wasn't too much of a hassle, coding the emulator was probably the hardest part of the project. 
 The final emulator provided in the repo is my implementation of the Gameboy-Emulator project made by github user Jordan Mitchell https://github.com/Jormit/Gameboy-Emulator . 
@@ -51,6 +45,13 @@ not to mention splitting some of the code into several files, increasing the ove
 
 The APU(Audio processing unit) emulator used for this project is from the gameboy-emu project made by github user sysprog21: https://github.com/sysprog21/gameboy-emu . 
 The APU emulation was really well done, it was very easy to setup, feeling almost like a plug and play solution.
+
+#
+
+I really enjoyed making this project, mainly cause I really wanted an excuse to learn about and code an emulator,
+and this concept of "game streaming" was my way of finding a project idea involving emulation, that would fit into the school's rubric. 
+
+Enjoy!
 
 *PS:* This project was made to work with the emulator provided in the repo, however, the python backend and client file,
 are essentially just a wrapper for the emulator itself and can be easily modified to work with additional emulators.
