@@ -42,6 +42,17 @@ Retro cloud, is a client-server based application, that allows the user to quick
   3. For use with the rest of this project(game streaming) set the ALT_CART variable to 1
   4. Run the make file and build the exe.
 
+# Self Signed certificate setup:
+1. Unzip the Crt Generation files New 3.13 1 zip file
+2. Input your details in the rootCA.conf file and the serverCSR.conf file
+3. Add the server ip to the server.conf file
+4. Run the Crt_Gen file
+5.(Optional) Add the rootCA.crt to your computer's accepted certificates(very easy via google search)
+6. Make sure rootCa.crt's path is exposed to the client file under the CERTIFICATE_FILE variable
+7. Make sure the server.crt and server.key files are exposed to the asyncServer.py file
+   <img width="565" height="54" alt="image" src="https://github.com/user-attachments/assets/ce2bca30-a4da-4feb-9a83-d4196883ab52" />
+
+
 # Credits: 
 While writing the backend and making the graphics wasn't too much of a hassle, coding the emulator was probably the hardest part of the project. 
 The final emulator provided in the repo is my implementation of the Gameboy-Emulator project made by github user Jordan Mitchell https://github.com/Jormit/Gameboy-Emulator . 
