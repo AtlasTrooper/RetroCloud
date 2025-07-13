@@ -9,7 +9,7 @@ Retro cloud, is a client-server based application, that allows the user to quick
   # LAN:
   1. Download OpenSSL:  https://slproweb.com/products/Win32OpenSSL.html 
   2. Setup OpenSSL on your device: https://tecadmin.net/install-openssl-on-windows/
-  3. Setup some form of Certificate that is compatible with OpenSSL and route the paths in both client and server to the certificate files.
+  3. Setup some form of Certificate that is compatible with OpenSSL and route the paths in both client and server to the certificate files(example. if the certificates are in the project directory, make an Encryption folder).
      Later in the README you will find a guide on setting them up the way I did, but it should work with other certificates too.
   4. Make sure the LOCAL_CERT variable is set to true for both client and server, otherwise there will be no encryption layer
 
@@ -31,7 +31,7 @@ Retro cloud, is a client-server based application, that allows the user to quick
   # Client:
   1. Make sure the main_menu.ui file is in the UI folder or in a path accessible to the client file
   2. You can add optional cover arts in the clientDATA/Main Page cover folder, these are cycled through at a random order whenever you return to menu
-  3. Validate that the emulator executable is exposed to the emulator_path variable
+  3. Build the emulator and make sure the resulting executable is exposed to the emulator_path variable
   4. Run the asyncClient.py file and enter the server IP
 
 # Credits: 
