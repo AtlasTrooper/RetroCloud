@@ -1,4 +1,5 @@
-# RetroCloud
+# RetroCloud <img width="160" height="160" alt="projectLogo" src="https://github.com/user-attachments/assets/365a0bf7-134d-4aee-a382-d1294ed72183" />
+
 Retro cloud, is a client-server based application, that allows the user to quickly and conveniently play their favorite retro games, without having to go through much setup, that being handled by the server. The server host organizes a ROM library, and the clients simply connect and stream the game ROM data from the server.
 
 *Note*: This is a project of mine made in highschool, it is by no means proffessional grade, and I would recommend reviewing and most likely modifying the code in the event that it might be used in a production environment of any kind. What you might find here may be innefficient or not very well written. Additionally, I unfortunately cannot provide the game ROMS I used for quite obvious reasons.
@@ -17,6 +18,8 @@ Retro cloud, is a client-server based application, that allows the user to quick
      is not like a standard ip address,  you might need to modify the pin_connect function i the MenuWindow class).
   
   # Server Setup:
+  <img width="254" height="121" alt="image" src="https://github.com/user-attachments/assets/23740c10-a34c-4822-8979-84adf790e856" />
+
   1. Acquire ROMS(currently the emulator is compatible with original gameboy roms up to MBC1, MBC1+ROM and MBC3/MBC3+ROM coming soon)
   2. Place roms in ServerDATA/roms
   3. You can add optional game descriptive text and cover art in the serverDATA/info_pages/ Art and Text folders
@@ -33,6 +36,18 @@ I really enjoyed making this project, mainly cause I really wanted an excuse to 
 and this concept of "game streaming" was my way of finding a project idea involving emulation, that would fit into the school's rubric. 
 
 Enjoy!
+
+# Credits: 
+While writing the backend and making the graphics wasn't too much of a hassle, coding the emulator was probably the hardest part of the project. 
+The final emulator provided in the repo is my implementation of the Gameboy-Emulator project made by github user Jordan Mitchell https://github.com/Jormit/Gameboy-Emulator . 
+I really liked the structure he used and I relied heavily on it, basing my emulator on much of his original code. I followed his emulator as a blueprint, essentially using the same functions and some variables 
+but writing their implementation myself. In some places where no changes were really necessary, I kept his code in place. 
+I wrote my implementation fully in C, and changed the way ROMS were loaded into the emulator in order to support the ROM "streaming" from the backend. 
+I also made many more changes where I saw they were fit to add(such as removing redundant functions and replacing them with more streamlined and simple alternatives)
+not to mention splitting some of the code into several files, increasing the overall resolution of the graphcis and adding support for additional MBCs(coming soon, just need to upload the new emulator build), etc...
+
+The APU(Audio processing unit) emulator used for this project is from the gameboy-emu project made by github user sysprog21: https://github.com/sysprog21/gameboy-emu . 
+The APU emulation was really well done, it was very easy to setup, feeling almost like a plug and play solution.
 
 *PS:* This project was made to work with the emulator provided in the repo, however, the python backend and client file,
 are essentially just a wrapper for the emulator itself and can be easily modified to work with additional emulators.
