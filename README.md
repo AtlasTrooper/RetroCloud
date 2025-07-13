@@ -13,7 +13,9 @@ Retro cloud, is a client-server based application, that allows the user to quick
      Later in the README you will find a guide on setting them up the way I did, but it should work with other certificates too.
   4. Make sure the LOCAL_CERT variable is set to true for both client and server, otherwise there will be no encryption layer
 
-  # WAN/Portfowarding: In this case, it is assumed that the server and or tunnel service that is being used to put the server on the open internet, already provides the encryption/security layer
+  # WAN/Portfowarding: 
+  In this case, it is assumed that the server and or tunnel service that is being used to put the server on the open internet, already provides the encryption/security layer
+  
   1. Make sure the LOCAL_CERT variable is set to false for both client and server.
   2. Make sure the client can accept a server ip of the type you are using, since currently it is configured to be able to use a normal ipv4 or an ngrok tcp endpoint(if you use something similar to ngrok where the forwarding address
      is not like a standard ip address,  you might need to modify the pin_connect function i the MenuWindow class).
@@ -32,7 +34,7 @@ Retro cloud, is a client-server based application, that allows the user to quick
   3. Validate that the emulator executable is exposed to the emulator_path variable
   4. Run the asyncClient.py file and enter the server IP
 
-
+#
 I really enjoyed making this project, mainly cause I really wanted an excuse to learn about and code an emulator,
 and this concept of "game streaming" was my way of finding a project idea involving emulation, that would fit into the school's rubric. 
 
