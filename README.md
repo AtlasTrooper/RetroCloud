@@ -26,13 +26,20 @@ Retro cloud, is a client-server based application, that allows the user to quick
   1. Acquire ROMS(currently the emulator is compatible with original gameboy roms up to MBC1, MBC1+ROM and MBC3/MBC3+ROM coming soon)
   2. Make a roms folder in ServerDATA/ and place the ROM files in there
   3. You can add optional game descriptive text and cover art in the serverDATA/info_pages/ Art and Text folders
-  4. Set the Server IP and PORT 
+  4. Set the Server IP and PORT
+  5. Run the asyncServer.py file
   
-  # Client:
+  # Client Setup:
   1. Make sure the main_menu.ui file is in the UI folder or in a path accessible to the client file
   2. You can add optional cover arts in the clientDATA/Main Page cover folder, these are cycled through at a random order whenever you return to menu
-  3. Build the emulator and make sure the resulting executable is exposed to the emulator_path variable
-  4. Run the asyncClient.py file and enter the server IP
+  3. Build the emulator(see "Building the Emulator" below) and make sure the resulting executable is exposed to the emulator_path variable
+  4. Run the asyncClient.py file
+
+  # Building the Emulator(only needed for clients):
+  1. Download the OneFileEmu folder and open it up in an editor(I used Vscode)
+  2. For Local play(running the exe from a terminal and providing the ROM via a path) set the ALT_CART variable to 0
+  3. For use with the rest of this project(game streaming) set the ALT_CART variable to 1
+  4. Run the make file and build the exe.
 
 # Credits: 
 While writing the backend and making the graphics wasn't too much of a hassle, coding the emulator was probably the hardest part of the project. 
