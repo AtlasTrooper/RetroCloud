@@ -47,7 +47,7 @@ Retro cloud, is a client-server based application, that allows the user to quick
 2. Input your details in the rootCA.conf file and the serverCSR.conf file
 3. Add the server ip to the server.conf file
 4. Run the Crt_Gen file
-5.(Optional) Add the rootCA.crt to your computer's accepted certificates(very easy via google search)
+5. (Optional) Add the rootCA.crt to your computer's accepted certificates(very easy via google search)
 6. Make sure rootCa.crt's path is exposed to the client file under the CERTIFICATE_FILE variable
 7. Make sure the server.crt and server.key files are exposed to the asyncServer.py file
    <img width="565" height="54" alt="image" src="https://github.com/user-attachments/assets/ce2bca30-a4da-4feb-9a83-d4196883ab52" />
