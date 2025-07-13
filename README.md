@@ -32,8 +32,9 @@ Retro cloud, is a client-server based application, that allows the user to quick
   # Client Setup:
   1. Make sure the main_menu.ui file is in the UI folder or in a path accessible to the client file
   2. You can add optional cover arts in the clientDATA/Main Page cover folder, these are cycled through at a random order whenever you return to menu
-  3. Build the emulator(see "Building the Emulator" below) and make sure the resulting executable is exposed to the emulator_path variable
-  4. Run the asyncClient.py file
+  3. Build the emulator and make sure the resulting executable is exposed to the emulator_path variable. The most up to date version of the emulator (and a built exe) is provided with the project files, but
+     should you wish to rebuild it or make changes, then see "Building the Emulator" below.
+  5. Run the asyncClient.py file
 
   # Building the Emulator(only needed for clients):
   1. Download the OneFileEmu folder and open it up in an editor(I used Vscode)
