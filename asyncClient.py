@@ -24,7 +24,7 @@ discon = False
 game_to_play = ""
 graphics_lock = asyncio.Lock()
 
-LOCAL_CERT = False
+LOCAL_CERT = True
 CERTIFICATE_FILE = 'Encryption/CertificatesAndConfigs/rootCA.crt'
 
 app_stylesheet = ""
