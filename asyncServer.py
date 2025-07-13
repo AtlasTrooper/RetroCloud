@@ -12,8 +12,8 @@ PORT = 5000
 
 
 LOCAL_CERT = True
-CERTIFICATE_FILE = 'Encryption/CertificatesAndConfigs/server.crt'
-PRIVATE_KEY_FILE = 'Encryption/CertificatesAndConfigs/server.key'
+CERTIFICATE_FILE = 'Encryption/CertificatesAndConfigs/server.crt' #Update these to your actual certificate paths
+PRIVATE_KEY_FILE = 'Encryption/CertificatesAndConfigs/server.key' #Update these to your actual certificate paths
 
 ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
 ssl_context.load_cert_chain(certfile=CERTIFICATE_FILE, keyfile=PRIVATE_KEY_FILE)
@@ -22,15 +22,15 @@ clients = {}  # writer -> username (None until set)
 
 clients_lock = asyncio.Lock()
 file_lock = asyncio.Lock()
+
+#The following variables are intended to configure my very basic rate limiting implementation
 rate_lock = asyncio.Lock()
-
-# Tracks last messages per client IP or user
-ENABLE_RATE_LIMITING = False
-rate_limits = {}
-
+ENABLE_RATE_LIMITING = False 
+rate_limits = {} # Tracks last messages per client IP or user
+#These two function together, ie. you can send 8 requests in any 10 second time span:
 MAX_REQUESTS = 8     # max allowed messages
-#MAX_CONNECTIONS_PER_IP = 10
 TIME_WINDOW = 10         # in seconds
+
 soft_ban = {} # addr: [time of ban, [blocked users]]
 full_ban = {} # addr: time of ban
 ban_duration = 30 # in seconds
