@@ -124,22 +124,19 @@ class MenuWindow(QMainWindow):
             window.con_button.setEnabled(True)
             return
 
+        #ngrok compatibility: uncomment to enable(currently using the eu forwarding link so you might need to change that to the link it gives you) 
         #HOST = pin[0] + ".tcp.eu.ngrok.io"
-        if "ngrok" in pin:
-            pin = pin.split(':')
-            HOST = pin[0] + ":" + pin[1]
-            PORT = pin[2]
+        # if "ngrok" in pin:
+        #     pin = pin.split(':')
+        #     HOST = pin[1][2:]
+        #     PORT = pin[2]
 
-            print(HOST)
-            print(PORT)
-        else:
-            HOST = pin
-            PORT = SERVER_PORT
-        # try:
-        #     PORT = int(pin[1:])
-        # except ValueError:
-        #     print("Invalid port number.")
-        #     return
+        #     print(HOST)
+        #     print(PORT)
+        # else:
+        HOST = pin
+        PORT = SERVER_PORT
+   
 
         await start_client()
 
