@@ -65,6 +65,25 @@ not to mention splitting some of the code into several files, increasing the ove
 The APU(Audio processing unit) emulator used for this project is from the gameboy-emu project made by github user sysprog21: https://github.com/sysprog21/gameboy-emu . 
 The APU emulation was really well done, it was very easy to setup, feeling almost like a plug and play solution.
 
+Additional sources:
+<div style="margin-bottom: 10px;"><a href="https://gbdev.io/pandocs/" style="color: #87CEFA; text-decoration: none;">Gameboy Pandocs</a>
+            <div style="margin-bottom: 10px;"><a href="https://meganesu.github.io/generate-gb-opcodes/" style="color: #87CEFA; text-decoration: none;">Gameboy CPU/Sharp LR35902 Opcodes</a>
+            <div style="margin-bottom: 10px;"><a href="https://wiki.libsdl.org/SDL2/APIByCategory" style="color: #87CEFA; text-decoration: none;">SDL2 Documentation</a>
+            <div style="margin-bottom: 10px;"><a href="https://www.youtube.com/watch?v=e87qKixKFME&list=PLVxiWMqQvhg_yk4qy2cSC3457wZJga_e5" style="color: #87CEFA; text-decoration: none;">Building a Gameboy Emulator in C (YouTube)</a>
+            <div style="margin-bottom: 10px;"><a href="https://en.wikipedia.org/wiki/CHIP-8" style="color: #87CEFA; text-decoration: none;">CHIP8 Wiki</a>
+            <div style="margin-bottom: 10px;"><a href="https://www.youtube.com/watch?v=YvZ3LGaNiS0&list=PLT7NbkyNWaqbyBMzdySdqjnfUFxt8rnU_" style="color: #87CEFA; text-decoration: none;">Building a Chip8 Emulator in C (YouTube)</a>
+            <div style="margin-bottom: 10px;"><a href="https://www.youtube.com/watch?v=06D1tBKeTB4" style="color: #87CEFA; text-decoration: none;">Setting up Make in VSCode</a>
+            <div style="margin-bottom: 10px;"><a href="https://www.youtube.com/watch?v=H08t6gD1Y1E" style="color: #87CEFA; text-decoration: none;">Setting up SDL2 for Windows</a>
+            <div style="margin-bottom: 10px;"><a href="https://chat.openai.com/" style="color: #87CEFA; text-decoration: none;">ChatGPT (for concept help)</a></div>
+            <div style="margin-bottom: 10px;"><a href="https://www.geeksforgeeks.org/" style="color: #87CEFA; text-decoration: none;">GeeksForGeeks.org</a></div>
+            <div style="margin-bottom: 10px;"><a href="https://www.w3schools.com/c/index.php" style="color: #87CEFA; text-decoration: none;">W3Schools - C</a></div>
+            <div style="margin-bottom: 10px;"><a href="https://github.com/sysprog21/gameboy-emu" style="color: #87CEFA; text-decoration: none;">APU (used from this emulator)</a>
+            <div style="margin-bottom: 10px;"><a href="https://github.com/rockytriton/LLD_gbemu/blob/main/README.md" style="color: #87CEFA; text-decoration: none;">Inspiration from this emulator</a>
+            <div style="margin-bottom: 10px;"><a href="https://github.com/Jormit/Gameboy-Emulator" style="color: #87CEFA; text-decoration: none;">CPP Gameboy Emulator (function blueprint)</a>
+            <div style="margin-bottom: 10px;"><a href="https://doc.qt.io/qtforpython-5/index.html" style="color: #87CEFA; text-decoration: none;">PyQt5 Documentation</a>
+            <div style="margin-bottom: 10px;"><a href="https://tecadmin.net/install-openssl-on-windows/" style="color: #87CEFA; text-decoration: none;">Setting up OpenSSL on Windows</a>
+             <a href="https://docs.python.org/3/library/asyncio.html" style="color: #87CEFA; text-decoration: none;">Asyncio Documentation</a>
+
 #
 
 I really enjoyed making this project, mainly cause I really wanted an excuse to learn about and code an emulator,
