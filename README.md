@@ -23,7 +23,7 @@ Retro cloud, is a client-server based application, that allows the user to quick
   # Server Setup:
   <img width="254" height="121" alt="image" src="https://github.com/user-attachments/assets/23740c10-a34c-4822-8979-84adf790e856" />
 
-  1. Acquire ROMS(currently the emulator is compatible with original gameboy roms up to MBC1, MBC1+ROM and MBC3/MBC3+ROM coming soon)
+  1. Acquire ROMS(currently the emulator is compatible with original gameboy roms up to MBC1, maybe one day I'll add MBC1+ROM+BATTERY for games like Link's Awakening 
   2. Make a roms folder in ServerDATA/ and place the ROM files in there
   3. You can add optional game descriptive text and cover art in the serverDATA/info_pages/ Art and Text folders
   4. Set the Server IP and PORT
@@ -60,7 +60,7 @@ I really liked the structure he used and I relied heavily on it, basing my emula
 but writing their implementation myself. In some places where no changes were really necessary, I kept his code in place. 
 I wrote my implementation fully in C, and changed the way ROMS were loaded into the emulator in order to support the ROM "streaming" from the backend. 
 I also made many more changes where I saw they were fit to add(such as removing redundant functions and replacing them with more streamlined and simple alternatives)
-not to mention splitting some of the code into several files, increasing the overall resolution of the graphcis and adding support for additional MBCs(coming soon, just need to upload the new emulator build), etc...
+not to mention splitting some of the code into several files, increasing the overall resolution of the graphcis, etc...
 
 The APU(Audio processing unit) emulator used for this project is from the gameboy-emu project made by github user sysprog21: https://github.com/sysprog21/gameboy-emu . 
 The APU emulation was really well done, it was very easy to setup, feeling almost like a plug and play solution.
