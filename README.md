@@ -1,6 +1,5 @@
 # RetroCloud 
-
-<img width="160" height="160" alt="projectLogo" src="https://github.com/user-attachments/assets/492b961d-aaa7-4bd2-baec-f31306dafca4" />
+<img width="160" height="160" alt="logo" src="https://github.com/user-attachments/assets/532d8b2c-5289-41e1-a1bf-b4f813c3a90e" />
 
 Retro cloud, is a client-server based application, that allows the user to quickly and conveniently play their favorite retro games, without having to go through much setup, that being handled by the server. The server host organizes a ROM library, and the clients simply connect and stream the game ROM data from the server.
 
