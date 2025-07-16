@@ -12,9 +12,10 @@
 #include <SDL2\SDL.h>
 
 // Screen Dimensions.
-#define SCREEN_WIDTH 980
-#define SCREEN_HEIGHT 864
-int scale = 3;
+int scale = 6;
+#define SCREEN_WIDTH 960 // (160 * scale)
+#define SCREEN_HEIGHT 864 // (144 * scale)
+
 
 // Clockspeed.
 #define CLOCKSPEED 4194304
@@ -69,7 +70,7 @@ $0150-$3FFF     Cartridge ROM - Bank 0 (fixed)
 $0100-$014F     Cartridge Header Area
 $0000-$00FF     Restart and Interrupt Vectors
 */
-#define ALT_CART 1
+#define ALT_CART 0
 u8 ram[65536] = { 0 };
 u8* rom;
 u8 bank_offset = 0;
@@ -1108,7 +1109,7 @@ void render_tile_map_line() {
 
 	u8 currentline = bus_read(0xFF44);
 
-	if (currentline >= SCREEN_HEIGHT) {
+	if (currentline >= 144) {
 		return;
 	}
 
@@ -1171,7 +1172,7 @@ void render_tile_map_line() {
 		int baseX = pixel * scale;
 		for (int dx = 0; dx < scale; dx++) {
 			for (int dy = 0; dy < scale; dy++) {
-				frame_buffer[currentline * scale + dy+(SCREEN_HEIGHT/4)][baseX + dx+(SCREEN_WIDTH/4)] = color_pallete[Tiles[tileNum][xPos % 8][yPos % 8]];
+				frame_buffer[currentline * scale + dy][baseX + dx] = color_pallete[Tiles[tileNum][xPos % 8][yPos % 8]];
 			}
 		}
 	}
@@ -1180,7 +1181,7 @@ void render_tile_map_line() {
 	yPos = currentline - WindowY;
 	tileRow = yPos / 8 * 32;
 	for (; pixel < 160; pixel++) {
-		int xPos = pixel - WindowX;
+		int xPos = scale * WindowX;
 		int tileColumn = (xPos / 8) % 32;
 		int tileNum;
 		if (unsig) {
@@ -1192,10 +1193,10 @@ void render_tile_map_line() {
 
 		//frame_buffer[currentline][pixel] = color_pallete[Tiles[tileNum][xPos % 8][yPos % 8]];
 			
-		int baseX = pixel * scale;
+		int baseX = pixel;
 		for (int dx = 0; dx < scale; dx++) {
 			for (int dy = 0; dy < scale; dy++) {
-			frame_buffer[currentline * scale + dy][baseX + dx] = color_pallete[Tiles[tileNum][xPos % 8][yPos % 8]];
+			frame_buffer[currentline + dy * scale][baseX * scale + dx] = color_pallete[Tiles[tileNum][xPos % 8][yPos % 8]];
 		}
 		}
 		
@@ -1227,7 +1228,7 @@ void render_sprites() {
 
 					for(int dx = 0; dx<scale; dx++){
 						for (int dy = 0; dy<scale; dy++){
-							frame_buffer[(((y*scale + (ypos*scale+dy)+SCREEN_HEIGHT/4)) % (SCREEN_HEIGHT))][((((xpos*scale+dx) + (x*scale)+SCREEN_WIDTH/4)) % (SCREEN_WIDTH))] =
+							frame_buffer[(((y*scale + (ypos*scale+dy)+SCREEN_HEIGHT)) % (SCREEN_HEIGHT))][((((xpos*scale+dx) + (x*scale)+SCREEN_WIDTH)) % (SCREEN_WIDTH))] =
 						color_pallete[Tiles[address][abs(8 * xflip - x)]
 						[abs(8 * yflip - y)]];
 						}
@@ -1252,7 +1253,7 @@ void display_buffer() {
 
 // Renders the graphics once per frame.
 void render_graphics() {
-	SDL_Delay(12);
+	SDL_Delay(10);
 	setup_color_pallete();
 	load_tiles();
 	render_sprites();
