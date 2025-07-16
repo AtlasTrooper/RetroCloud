@@ -12,8 +12,8 @@ PORT = 5000
 
 
 LOCAL_CERT = True
-CERTIFICATE_FILE = 'Encryption/CertificatesAndConfigs/server.crt' #Update these to your actual certificate paths
-PRIVATE_KEY_FILE = 'Encryption/CertificatesAndConfigs/server.key' #Update these to your actual certificate paths
+CERTIFICATE_FILE = 'Encryption/CertificatesAndConfigs/server.crt'
+PRIVATE_KEY_FILE = 'Encryption/CertificatesAndConfigs/server.key'
 
 ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
 ssl_context.load_cert_chain(certfile=CERTIFICATE_FILE, keyfile=PRIVATE_KEY_FILE)
@@ -22,15 +22,15 @@ clients = {}  # writer -> username (None until set)
 
 clients_lock = asyncio.Lock()
 file_lock = asyncio.Lock()
-
-#The following variables are intended to configure my very basic rate limiting implementation
 rate_lock = asyncio.Lock()
-ENABLE_RATE_LIMITING = False 
-rate_limits = {} # Tracks last messages per client IP or user
-#These two function together, ie. you can send 8 requests in any 10 second time span:
-MAX_REQUESTS = 8     # max allowed messages
-TIME_WINDOW = 10         # in seconds
 
+# Tracks last messages per client IP or user
+ENABLE_RATE_LIMITING = False
+rate_limits = {}
+
+MAX_REQUESTS = 8     # max allowed messages
+#MAX_CONNECTIONS_PER_IP = 10
+TIME_WINDOW = 10         # in seconds
 soft_ban = {} # addr: [time of ban, [blocked users]]
 full_ban = {} # addr: time of ban
 ban_duration = 30 # in seconds
@@ -352,21 +352,24 @@ async def handle_client(reader: asyncio.StreamReader, writer: asyncio.StreamWrit
                 if message.startswith("INFO"):
                     try:
                         game_name = message.split('|')[1].split('.')[0]
-
-                        async with file_lock:
-                            async with aiofiles.open(f"serverDATA/info_pages/Text/{game_name}", "r") as f:
-                                game_info_data = await f.read()
-                                game_info = game_info_data.split(',')
+                        game_info = ""
+                        if os.path.exists(f"serverDATA/info_pages/Text/{game_name}"):
+                            async with file_lock:
+                                async with aiofiles.open(f"serverDATA/info_pages/Text/{game_name}", "r") as f:
+                                    game_info_data = await f.read()
+                                    game_info = game_info_data.split(',')
 
                         game_pic = b""
+
                         art_dir = "serverDATA/info_pages/Art"
-                        for f_name in os.listdir(art_dir):
-                            if f_name.startswith(game_name):
-                                async with file_lock:
-                                    async with aiofiles.open(f"{art_dir}/{f_name}", "rb") as f:
-                                        game_pic = await f.read()
-                                    game_name = f_name
-                                break
+                        if os.path.exists(art_dir):
+                            for f_name in os.listdir(art_dir):
+                                if f_name.startswith(game_name):
+                                    async with file_lock:
+                                        async with aiofiles.open(f"{art_dir}/{f_name}", "rb") as f:
+                                            game_pic = await f.read()
+                                        game_name = f_name
+                                    break
 
                         await send_message(writer,
                                            f"INFO||{game_name}||{game_info[0]}||{game_info[1]}||{game_pic}")
